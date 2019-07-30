@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: mytest-manual
+spec:
+    containers:
+        - image: hanhiver/mytest
+          name: mytest
+          ports:
+              - containerPort: 5000
+                protocol: TCP
+

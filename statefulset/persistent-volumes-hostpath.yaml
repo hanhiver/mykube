@@ -1,0 +1,40 @@
+kind: List
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-a
+  spec:
+    capacity:
+      storage: 1Mi
+    accessModes:
+      - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Recycle
+    hostPath:
+      path: /home/dhan/k8s/minikube/mytest/statefulset/a
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-b
+  spec:
+    capacity:
+      storage: 1Mi
+    accessModes:
+      - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Recycle
+    hostPath:
+      path: /home/dhan/k8s/minikube/mytest/statefulset/b
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv-c
+  spec:
+    capacity:
+      storage: 1Mi
+    accessModes:
+      - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Recycle
+    hostPath:
+      path: /home/dhan/k8s/minikube/mytest/statefulset/c
+
