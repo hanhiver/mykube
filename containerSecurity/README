@@ -1,0 +1,7 @@
+dhan$ kubectl exec -it pod-with-ronly-fs touch /new-file
+touch: /new-file: Read-only file system
+command terminated with exit code 1
+
+dhan$ kubectl exec -it pod-with-ronly-fs touch /volume/new-file
+dhan$ kubectl exec -it pod-with-ronly-fs ls /volume
+new-file

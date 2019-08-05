@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-ronly-fs
+spec:
+  containers:
+  - name: main
+    image: alpine
+    command: ["/bin/sleep", "99999"]
+    securityContext:
+      readOnlyRootFilesystem: true
+    volumeMounts:
+    - name: my-volume
+      mountPath: /volume
+      readOnly: false
+  volumes:
+  - name: my-volume
+    emptyDir:
+
