@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mytest
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: mytest
+      labels:
+        app: mytest
+    spec:
+      containers:
+      - image: hanhiver/mytest
+        name: python
+        resources:
+          requests:
+            cpu: 100m
+
